@@ -1,17 +1,27 @@
 
 # 🦀 Tiny HTTP Server in Rust
 
-A minimal multithreaded HTTP server written **from scratch in pure Rust** (without frameworks).  
-This project demonstrates low-level networking using `TcpListener`, multithreading with a thread pool, and basic HTTP parsing.
+A minimal **multithreaded HTTP server** built entirely in **pure Rust**, without using external web frameworks.  
+It demonstrates low-level networking with `TcpListener`, concurrency with a thread pool, and manual HTTP parsing.  
 
 ---
 
 ## ✨ Features
-- `GET /` → Welcome message  
-- `GET /echo/{msg}` → Echoes back `{msg}`  
-- `GET /user-agent` → Returns the client **User-Agent** header  
-- `GET /files/{filename}` → Serves files from the `tmp/` directory  
-- `POST /files/{filename}` → Saves request body into `tmp/{filename}`  
+
+- **Root** → `GET /`  
+  Returns a welcome message.  
+
+- **Echo** → `GET /echo/{msg}`  
+  Returns back the `{msg}` you provide.  
+
+- **User-Agent** → `GET /user-agent`  
+  Extracts and returns the client `User-Agent` header.  
+
+- **File Download** → `GET /files/{filename}`  
+  Reads a file from the `tmp/` directory and returns its contents.  
+
+- **File Upload** → `POST /files/{filename}`  
+  Saves the request body into `tmp/{filename}`.  
 
 ---
 
@@ -19,11 +29,9 @@ This project demonstrates low-level networking using `TcpListener`, multithreadi
 
 ### Prerequisites
 - [Rust](https://www.rust-lang.org/tools/install) (latest stable)
-- Cargo (comes with Rust)
 
-### Run the server
+### Clone & Run
 ```bash
 git clone https://github.com/your-username/rust-tiny-http.git
 cd rust-tiny-http
 cargo run
-
