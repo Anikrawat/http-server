@@ -50,8 +50,6 @@ fn parse_info(stream: &mut TcpStream) {
         body.push_str(&String::from_utf8_lossy(&buf[..n]));
     }
 
-    println!("Request body: {}", body);
-
     //Routing
     match (method, path) {
         ("GET", "/") => {
@@ -136,4 +134,3 @@ fn main() {
         }
     }
 }
-
