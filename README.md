@@ -19,7 +19,7 @@ It demonstrates low-level networking with `TcpListener`, concurrency with a thre
 
 - **File Download** → `GET /files/{filename}`  
   Reads a file from the `tmp/` directory and returns its contents.  
-
+  If the file doesn't exist -> Returns "Not Found".
 - **File Upload** → `POST /files/{filename}`  
   Saves the request body into `tmp/{filename}`.  
 
@@ -32,6 +32,6 @@ It demonstrates low-level networking with `TcpListener`, concurrency with a thre
 
 ### Clone & Run
 ```bash
-git clone https://github.com/your-username/rust-tiny-http.git
-cd rust-tiny-http
+git clone https://github.com/Anikrawat/http-server.git
+cd http-server
 cargo run
